@@ -1,69 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>41 paskaita - Git it Github</title>
-    <link rel="stylesheet" href="./main.css">
-    <script src="./main.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>41 paskaita - Git ir GitHub</title>
+  <link rel="stylesheet" href="./main.css">
+  <script src="./main.js" defer></script>
 </head>
 <body>
-    <main>
-        <section>
-            <h1>Git</h1>
-            <p>
-                Git'as yra populiariausia kodo versijavimo programa.
-            </p>
-            <h2>Git komandos</h2>
-            <ul>
-                <li>init - sukuria git repozitorija dabartiniame aplankale</li>
-                <li>status - nurodo informacija apie lokalios git repozitorijos statusa</li>
-                <li>add - prideda nurodytus files prie commitui paruostu failu (stage'ina)</li>
-                <li>rm --cached - isima nurodytus failus is stage'inimo zonos</li>
-                <li>commit -m 'zinute' - sukuria kodo versija is stage'intu failu ir prideda zinute apie pakitimus (ne daugiau  nei 50 simboliu)</li>
-                <li>restore (git checkout -- file) - grazina nurodytus failus i buvusio commit busena (panaikina naujus pakitimus padarytus po paskutinio commit)</li>
-                <li>push - is lokalios repozitorijos nusiuncia commit'us i isorine repozitorija</li>
-                <li>pull - is isorines repozitorijos atsiuncia commit'us i lokalia repozitorija</li>
-                <li>clone - nukopijuoja nurodyta repozitorija is isorines repozitorijos</li>
-                <li>checkout commitID|branchName - pereina i nurodyta kodo versija arba i kita branch</li>
-                <li>branch naujosSakosPavadinimas - sukuria nauja saka</li>
-            </ul>
-        </section>
-        <section>
-            <h1>Branch protection rules</h1>
-            <p>
-                Vienas svarbiausiu saku apsaugos taisykliu yra "Pull Request".(bandymas vienos sakos commitus sukelti i kita saka)<br>
-                Pull Request dar galima suteikti "Require approvals", kuris reikalauja, kad nurodytas kiekis kitu projekto dalyviu
-                patvirtintu Pull Requesta.
-            </p>
-        </section>
-        <section>
-            <h1>Eiliskumas Pull Request</h1>
-            <ol>
-                <li>Susikurti nauja saka - git branch newName</li>
-                <li>Nueiti i ta nauja saka - git checkout newName</li>
-                <li>Atlieki uzduoti, kuria apsiemei padaryti
-                    <ol>
-                        <li>Addini pakitusius failus - git add .</li>
-                        <li>Commit'ini pakitimus - git commit -m "zinute apie pakitimus"</li>
-                    </ol>
-                </li>
-                <li>Nueini i main/master saka - git checkout main|master</li>
-                <li>Atnaujini main|master saka - git pull</li>
-                <li>nueini i ta nauja saka - git checkout newBranchName</li>
-                <li>Sujungi savo saka su main|master ir issprendi galimai atsiradusius konfliktus - git merge main|master</li>
-                <li>nusiunti naujos sakos pakitimus i Github - git push</li>
-                <li>Githube sukurti Pull Requesta</li>
-                <li>Kiti komandos nariai patvirtina arba atmeta ta Pull Requesta</li>
-            </ol>
-        </section>
-        <section>
-            <h1>Extra links</h1>
-            <ul>
-                <li><a href="">`git cheat sheet</a></li>
-                <li><a href="">git quick guide</a></li>
-            </ul>
-        </section>
-    </main>
+  <main>
+    <section> <!-- git -->
+      <h1>Git</h1>
+      <p>
+        Git'as yra populiariausia kodo versijavimo programa.
+      </p>
+      <h2>Git komandos</h2>
+      <ul>
+        <li>init - sukuria git'o repozitoriją dabartiniame aplankale</li>
+        <li>status - nurodo informaciją apie lokalios git'o repozitorijos statusą</li>
+        <li>add - prideda nurodytus failus prie commit'ui paruoštų failų (stage'ina)</li>
+        <li>rm --cached - išima nurodytus failus iš stage'inimo zonos (unstage'ina)</li>
+        <li>commit -m "žinutė" - sukuria kodo versiją iš stage'intų failų ir prideda žinutę apie pakitimus (žinutė turėtų būti trumpa (ne ilgesnė nei 50 simbolių) ir aiški)</li>
+        <li>restore - grąžina nurodytus failus į buvusio commit'o būseną (panaikina naujus pakitimus padarytus po paskutinio commit'o)</li>
+        <li>push - iš lokalios repozitorijos nusiunčia commit'us į išorinę repozitoriją</li>
+        <li>pull - iš išorinės repozitorijos atsiunčia commit'us į lokalią repozitoriją</li>
+        <li>clone - klonuoja nurodytą repozitoriją iš išorinės repozitorijos</li>
+        <li>log - išveda commit'ų sąrašą</li>
+        <li>checkout commitID|branchName - pareina į nurodytą kodo versiją ARBA į kitą šaką</li>
+        <li>branch naujosSakosPavadinimas - sukuria naują šaką</li>
+      </ul>
+    </section>
+    <section>
+      <h1>Branch protection rules</h1>
+      <p>
+        Vienas svarbiausių šakų apsaugos taisyklių yra "Pull Request" (bandymas vienos šakos commit'us sukelti į kitą šaką).<br>
+        Pull Request dar galima suteikti "Require approvals", kuris reikalauja, kad nurodytas kiekis kitų projekto dalyvių patvirtintų Pull Request'ą.
+      </p>
+    </section>
+    <section>
+      <h1>Eiliškumas Pull Request</h1>
+      <ol>
+        <li>Susikurti naują šaką - git branch newBranchName</li>
+        <li>Nueiti į tą naują šaką - git checkout newBranchName</li>
+        <li>Atlieki užduotį, kurią apsiėmei padaryti
+          <ol>
+            <li>Add'ini pakitusius failus - git add .</li>
+            <li>Commit'ini pakitimus - git commit -m "žinutė apie pakitimus"</li>
+          </ol>
+        </li>
+        <li>Nueini į main|master šaką - git checkout main|master</li>
+        <li>Atnaujini main|master šaką - git pull</li>
+        <li>Nueini į tą naują šaką - git checkout newBranchName</li>
+        <li>Sujungi savo šaką su main|master ir išsprendi galimai atsiradusius konfliktus - git merge main|master</li>
+        <li>Nusiunti tos naujos šakos pakitimus į GitHub'ą - git push</li>
+        <li>GitHub'e sukurti Pull Request'ą</li>
+        <li>Kiti komandos nariai patvirtina arba atmeta Pull Request'ą</li>
+      </ol>
+    </section>
+    <section>
+      <h1>Extra links</h1>
+      <ul>
+        <li><a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">Git Cheat Sheet</a></li>
+        <li><a href="https://rogerdudler.github.io/git-guide/" target="_blank">Git Quick Guide</a></li>
+        <li><a href="https://youtu.be/8JJ101D3knE" target="_blank">Mosh about Git</a></li>
+        <li><a href="https://youtu.be/mJ-qvsxPHpY" target="_blank">Nick White about Git</a></li>
+        <li><a href="https://youtu.be/DVRQoVRzMIY" target="_blank">Tech With Tim about Git</a></li>
+        <li><a href="https://youtu.be/hwP7WQkmECE" target="_blank">FireShip about Git 100s</a></li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
